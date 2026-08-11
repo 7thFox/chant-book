@@ -1,5 +1,11 @@
 \version "2.24.0"
 
+\header {
+  % avoid modifying PDFs every time we regenerate them
+  pdfcreationdate = "D:20000101000000Z"
+  pdfmoddate      = "D:20000101000000Z"
+}
+
 #(set-global-staff-size 24)
 
 chant_red = #(rgb-color 0.60 0.00 0.00)
