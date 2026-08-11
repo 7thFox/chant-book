@@ -1,8 +1,7 @@
 \include "../common.ly"
 
 \header {
-  title = "Receive the Body of Christ"
-  % subtitle = "Zadostoinik for the Feast of Transfiguration"
+  title    = "Receive the Body of Christ"
   composer = "Valaam Chant"
 }
 
@@ -16,10 +15,8 @@
       \new Voice = "ison" \relative c' { \ison
         c2 r4 r2 r r r r4 r r r r2 r4 r r1
         r2 r r4 r r r r r r a2 r
-        \override NoteColumn.force-hshift = #1.0
-        c1
-        \override NoteColumn.force-hshift = #0
-        d2 r r4 r r r4 c1 \bar "||"
+        \ison_beside
+        c1 \ison_zero d2 r r4 r r r8 r \ison_align c1 \bar "||"
       }
     >>
 
@@ -34,6 +31,7 @@
     }
   >>
 }
+
 \score {
   <<
     \new Staff <<
@@ -44,10 +42,12 @@
       \new Voice = "ison" \relative c' { \ison
         c2 r4 r4 r2 r r4 r r r r2 r4 r r1
         r2 r r4 r r r r r a2 r2
-        \override NoteColumn.force-hshift = #1.0
+        \ison_beside
         c1
-        \override NoteColumn.force-hshift = #0
-        d2 r2 r r4 r r r c1 \bar "||"
+        \ison_zero
+        d2 r2 r r4 r r r
+        \ison_align
+        c1 \bar "||"
       }
     >>
 
@@ -68,8 +68,10 @@
       \new Voice = "ison" \relative c' { \ison
       c2 r4 r r2 r r
       r2 r4 r r2 r r
-      r2 r4 r a1 r
-      \override NoteColumn.force-hshift = #1.0
+      r2 r4 r
+      \ison_align
+      a1 r
+      \ison_beside
       c \bar "|."
       }
     >>
@@ -78,21 +80,6 @@
       A -- le -- lu -- i -- a,
       A -- le -- lu -- i -- a,
       A -- le -- lu -- i -- a.
-    }
-  >>
-}
-
-\score {
-  <<
-    \new Staff <<
-      \new Voice = "melody" \relative c' { \melody
-      }
-      \new Voice = "ison" \relative c' { \ison
-      }
-    >>
-
-    \new Lyrics \lyricsto "melody" {
-      Re -- ceive the Bo -- dy of Christ, taste the foun -- tain of im -- mor -- tal -- it -- y.
     }
   >>
 }

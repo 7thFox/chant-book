@@ -15,8 +15,7 @@
         c4 c d2 (e) c4 (d) e f1 \bar "|"
         e4 e e d2 d4 c1 \bar "||" }
       \new Voice = "ison" \relative c' { \ison
-
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         r4 r r2 r r4 r r r1 \bar "|"
         r4 r r r2 r4 c1 \bar "||" }
     >>
@@ -40,11 +39,11 @@
         c4 c d2 (e) c4 (d) e f1 \bar "|"
         e4 (f) g f e d e f1 e4 e d2 d4 c1 \bar "||" }
       \new Voice = "ison" \relative c' { \ison
-        \override NoteColumn.force-hshift = #-1.0
+        \ison_beside
         c1 r r2  r  r4 \bar "|"
-        \override NoteColumn.force-hshift = #0.0
+        \ison_zero
         a1 r2 r4 r1 r2 g2 r4
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1\bar "||" }
     >>
 
@@ -67,7 +66,7 @@
       \new Voice = "ison" \relative c' { \ison
         r1 r r2  r  r4 \bar "|"
         a4 r r2 r4 r r r r g2 r4
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 
@@ -90,7 +89,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r r2 r r4 r r r r r r r1 \bar "|"
         a4  r  r2 r4 r r r g2 r4
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 
@@ -112,7 +111,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r r2 r r4 r r r r r1 \bar "|"
         a4  r  r2 r4 r r r r r r g2
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 
@@ -134,7 +133,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r r2 r r4 r r r r r1 \bar "|"
         a4  r  r2 r4 r r r r r g2
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 
@@ -156,7 +155,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r2  r  r4 r r r r r r1 \bar "|"
         a4 r r r4 r4 r r r r g2 r4 r
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 
@@ -178,7 +177,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r r2  r  r4 r r r r r r1 \bar "|"
         a4 r r r4 r4 r r r r g2 r4 r r
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 
@@ -201,7 +200,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r r2  r  r4 r r r r r r1 \bar "|"
         a4 r r r4 r4 r r r r g2 r4 r r
-        \override NoteColumn.force-hshift = #1.1
+        \ison_beside
         c1 \bar "||" }
     >>
 

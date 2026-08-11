@@ -1,4 +1,10 @@
 \version "2.24.0"
+% rgb(67%, 11%, 12%)
+chant_red = #(rgb-color 0.65 0.00 0.00)
+ison_zero   = { \override NoteColumn.force-hshift = #0     }
+ison_align  = { \override NoteColumn.force-hshift = #0.175 }
+ison_beside = { \override NoteColumn.force-hshift = #1.0   }
+ison_left   = { \override NoteColumn.force-hshift = #-1.0   }
 
 melody = {
     \voiceOne
@@ -7,11 +13,12 @@ melody = {
     \omit Staff.TimeSignature
     \override Stem.direction = #DOWN
     \override TextScript.X-offset = #-30
-    \override HorizontalBracket.color = #darkred
+    \override HorizontalBracket.color = #chant_red
     \override HorizontalBracket.direction = #UP
     \override HorizontalBracket.bracket-flare = #'(0 . 0)
     \override HorizontalBracketText.text = "Unison"
-    \override HorizontalBracketText.color = #darkred
+    \override HorizontalBracketText.color = #chant_red
+
 }
 
 ison = {
@@ -20,9 +27,10 @@ ison = {
   \clef alto
   \omit Staff.TimeSignature
   \omit Voice.Rest
-  \override NoteHead.color = #darkred
-  \override NoteHead.style = #'harmonic
+  \override NoteHead.color = #chant_red
   \override Stem.stencil = ##f
+  \override NoteHead.stencil = #(lambda (grob) (grob-interpret-markup grob (markup #:musicglyph "noteheads.s0mi")))
+  % \override NoteHead.layer = #-1
 }
 
 \layout {
