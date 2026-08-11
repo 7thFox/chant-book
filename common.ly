@@ -1,5 +1,5 @@
 \version "2.24.0"
-% rgb(67%, 11%, 12%)
+
 chant_red = #(rgb-color 0.65 0.00 0.00)
 ison_zero   = { \override NoteColumn.force-hshift = #0     }
 ison_align  = { \override NoteColumn.force-hshift = #0.175 }
