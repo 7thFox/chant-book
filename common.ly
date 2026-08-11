@@ -1,5 +1,5 @@
 \version "2.24.0"
-
+\pointAndClickOff
 \header {
   % avoid modifying PDFs every time we regenerate them
   pdfcreationdate = "D:20000101000000Z"
