@@ -6,10 +6,6 @@
   composer = "Valaam Chant"
 }
 
-\layout {
-  indent = 0\mm
-}
-
 \score {
   <<
     \new Staff <<
@@ -22,7 +18,7 @@
         d2 d4 (b d2) d e4 (f g2) g g4 (f) e2 f (e) d1 \bar "||" \break
 
         c2 d e e4 (d) e (f) g2 f e d4 (e f2) e1 \bar "|"
-        d2 (e) e d e (e4 f) g2 (f) \break e (d4 e f2 e1) \bar "|"
+        d2 (e) e d e (e4 f) g2 (f) e (d4 e f2 e1) \bar "|"
         e2 d e4 (d) e (f g2) g4 (e) f (g) a2 g f e (d f1) \bar "|"
         f2 f f e4 (d e2) e d c d1 \bar "|"
         f1 f2 e4 d f2 e4 e d1 \bar "|"

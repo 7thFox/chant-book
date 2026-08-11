@@ -1,9 +1,13 @@
 \include "../common.ly"
 
 \header {
-  title = "The First Antiphon"
+  title    = "The First Antiphon"
   subtitle = "Psalm 102"
   composer = "Valaam Chant"
+}
+
+\layout {
+  indent = 10\mm
 }
 
 \score {
