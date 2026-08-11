@@ -17,4 +17,4 @@ all:
 	done
 
 %.pdf: %.ly
-	echo "$< => $*"
+	lilypond -o "$*" "$<"
