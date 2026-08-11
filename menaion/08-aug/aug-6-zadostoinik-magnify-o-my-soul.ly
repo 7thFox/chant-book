@@ -1,56 +1,19 @@
-\version "2.24.0"
+\include "../../common.ly"
 
 \header {
-  title = "Magnify, O My Soul"
+  title    = "Magnify, O My Soul"
   subtitle = "Zadostoinik for the Feast of Transfiguration"
   composer = "Valaam Chant"
 }
 
-melody = {
-  \voiceOne
-  \cadenzaOn
-  \clef alto
-  \omit Staff.TimeSignature
-  \override Stem.direction = #DOWN
-  \override TextScript.X-offset = #-30
-}
-
-ison = {
-  \voiceTwo
-  \cadenzaOn
-  \clef alto
-  \omit Staff.TimeSignature
-  \omit Voice.Rest
-  \override NoteHead.color = #darkred
-  \override NoteHead.style = #'harmonic
-  \override Stem.stencil = ##f
-}
-
 \layout {
-  \context {
-    \Lyrics
-    \override LyricHyphen.minimum-distance = #1.0
-    \override LyricSpace.minimum-distance = #1.2
-  }
-  \context {
-    \Voice
-    \consists "Horizontal_bracket_engraver"
-  }
-}
-\paper {
-  tagline = ##f
+  indent = 0\mm
 }
 
 \score {
   <<
     \new Staff <<
       \new Voice = "melody" \relative c' { \melody
-        \override HorizontalBracket.color = #darkred
-        \override HorizontalBracket.direction = #UP
-        \override HorizontalBracket.bracket-flare = #'(0 . 0)
-        \override HorizontalBracketText.text = "Unison"
-        \override HorizontalBracketText.color = #darkred
-
         \startGroup
         d4 (e) d (c)
         \stopGroup
@@ -102,9 +65,4 @@ ison = {
       there -- fore we all mag -- ni -- fy thee, O The -- o -- tok -- os.
     }
   >>
-
-  \layout {
-    indent = 0\mm
-    ragged-last = ##t
-  }
 }

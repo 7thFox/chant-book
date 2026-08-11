@@ -1,45 +1,9 @@
-\version "2.24.0"
+\include "../common.ly"
 
 \header {
   title = "The First Antiphon"
   subtitle = "Psalm 102"
   composer = "Valaam Chant"
-}
-
-melody = {
-  \voiceOne
-  \cadenzaOn
-  \clef alto
-  \omit Staff.TimeSignature
-  \override Stem.direction = #DOWN
-  \override TextScript.X-offset = #-30
-}
-
-ison = {
-  \voiceTwo
-  \cadenzaOn
-  \clef alto
-  \omit Staff.TimeSignature
-  \omit Voice.Rest
-  \override NoteHead.color = #darkred
-  \override NoteHead.style = #'harmonic
-  \override Stem.stencil = ##f
-}
-
-\paper {
-  tagline = ##f
-}
-
-\layout {
-  \context {
-    \Lyrics
-    \override LyricHyphen.minimum-distance = #1.0
-    \override LyricSpace.minimum-distance = #1.2
-  }
-  \context {
-    \Voice
-    \consists "Horizontal_bracket_engraver"
-  }
 }
 
 \score {
