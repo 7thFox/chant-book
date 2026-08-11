@@ -15,7 +15,7 @@
       \new Voice = "ison" \relative c' { \ison
         c2 r4 r2 r r r r4 r r r r2 r4 r r1
         r2 r r4 r r r r r r a2 r
-        \ison_beside
+        \ison_right
         c1 \ison_zero d2 r r4 r r r8 r \ison_align c1 \bar "||"
       }
     >>
@@ -42,7 +42,7 @@
       \new Voice = "ison" \relative c' { \ison
         c2 r4 r4 r2 r r4 r r r r2 r4 r r1
         r2 r r4 r r r r r a2 r2
-        \ison_beside
+        \ison_right
         c1
         \ison_zero
         d2 r2 r r4 r r r
@@ -71,7 +71,7 @@
       r2 r4 r
       \ison_align
       a1 r
-      \ison_beside
+      \ison_right
       c \bar "|."
       }
     >>

@@ -3,7 +3,7 @@
 chant_red = #(rgb-color 0.65 0.00 0.00)
 ison_zero   = { \override NoteColumn.force-hshift = #0     }
 ison_align  = { \override NoteColumn.force-hshift = #0.175 }
-ison_beside = { \override NoteColumn.force-hshift = #1.0   }
+ison_right  = { \override NoteColumn.force-hshift = #1.0   }
 ison_left   = { \override NoteColumn.force-hshift = #-1.0   }
 
 melody = {

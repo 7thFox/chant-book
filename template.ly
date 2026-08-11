@@ -11,7 +11,7 @@
       \new Voice = "ison" \relative c' { \ison
         r4 r r2  r  r4 r r r r r r1 \bar "|"
         a4 r r r4 r4 r r r r g2 r4 r r
-        \ison_beside
+        \ison_right
         c1 \bar "||" }
     >>
 
