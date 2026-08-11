@@ -2,7 +2,7 @@
 
 chant_red = #(rgb-color 0.65 0.00 0.00)
 ison_zero   = { \override NoteColumn.force-hshift = #0     }
-ison_align  = { \override NoteColumn.force-hshift = #0.175 }
+ison_align  = { \override NoteColumn.force-hshift = #0.075 }
 ison_right  = { \override NoteColumn.force-hshift = #1.0   }
 ison_left   = { \override NoteColumn.force-hshift = #-1.0   }
 
@@ -29,7 +29,12 @@ ison = {
   \omit Voice.Rest
   \override NoteHead.color = #chant_red
   \override Stem.stencil = ##f
-  \override NoteHead.stencil = #(lambda (grob) (grob-interpret-markup grob (markup #:musicglyph "noteheads.s0mi")))
+  \override NoteHead.stencil = #(lambda (grob)
+    (ly:stencil-scale
+      (grob-interpret-markup grob (markup #:musicglyph "noteheads.s0mi"))
+      1.25
+      1.25
+    ))
   % \override NoteHead.layer = #-1
 }
 
