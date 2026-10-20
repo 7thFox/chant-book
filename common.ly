@@ -59,4 +59,8 @@ ison = {
 
 \paper {
   tagline = ##f
+
+  property-defaults.fonts.serif = "Monomakh"
+  property-defaults.fonts.sans = "Monomakh"
+  property-defaults.fonts.typewriter = "Monomakh"
 }

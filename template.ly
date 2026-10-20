@@ -1,5 +1,11 @@
 \include "common.ly"
 
+\header {
+  title    = "The First Antiphon"
+  subtitle = "Psalm 102"
+  composer = "Valaam Chant"
+}
+
 \score {
   <<
     \new Staff  \with {

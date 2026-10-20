@@ -21,6 +21,9 @@
     >>
 
     \new Lyrics \lyricsto "melody" {
+      \override LyricText.font-name = #"Pochaevsk"
+      \override LyricText.font-size = #+2
+
       Тѣ -- ло хри -- сто -- во, при -- и -- ми -- те
       ис -- то -- чни -- ка без -- смерт -- на -- го вку -- си -- те.
     }
