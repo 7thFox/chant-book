@@ -1,6 +1,6 @@
 \include "common.ly"
 
-#(set-global-staff-size 22)
+#(set-global-staff-size 21)
 
 \header {
   title    = ##f %"The First Antiphon"
