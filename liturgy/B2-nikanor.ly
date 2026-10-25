@@ -120,23 +120,64 @@
     >>
 
     \new Lyrics \lyricsto "soprano" {
+      BLESS THE LORD, O MY SOUL, BLESS -- ED ART THOU O LORD.
 
+      \break
+      BLESS
+      THE
+      LORD, O MY SOUL, AND ALL THAT IS WITH -- IN ME,
+
+      \break
+      BLESS
+      HIS
+      HO -- LY
+      NAME.
       BLESS THE LORD, O MY SOUL,
-        BLESS -- ED ART THOU O LORD.
-      BLESS THE LORD, O MY SOUL,
-        AND ALL THAT IS WITH -- IN ME,
-        BLESS HIS HO -- LY NAME.
-      BLESS THE LORD, O MY SOUL,
-        AND FOR -- GET NOT ALL HIS BEN -- NE -- FITS.
+
+      \break
+      AND
+      FOR -- GET
+      NOT
+      ALL
+      HIS
+      BEN -- NE -- FITS.
       \once \override LyricText.self-alignment-X = #LEFT
-      WHO_FOR-GIV-ETH_ALL_THINE IN -- I -- QUI -- TIES;
-        WHO HEAL -- ETH ALL THY DES -- EAS -- ES.
-      WHO RE -- DEEM -- ETH THY LIFE FROM DE -- STRUC -- TION,
-        WHO CROWN -- ETH THEE WITH LOVE -- ING -- KIND -- NESS AND TEN -- DER MER -- CIES.
+      WHO_FOR-GIV-ETH_ALL_THINE
+
+      \break
+      IN -- I -- QUI -- TIES;
+      WHO
+      HEAL
+      -- ETH
+      ALL
+      THY DES -- EAS -- ES.
+
+      \break
+      WHO RE -- DEEM -- ETH
+      THY LIFE FROM DE -- STRUC -- TION, WHO CROWN -- ETH
+
+      \break
+      THEE
+      WITH
+      LOVE --
+       ING -- KIND -- NESS AND TEN -- DER MER -- CIES.
       \once \override LyricText.self-alignment-X = #LEFT
-      THE_LORD_IS_FULL OF COM -- PAS -- SION AND MER -- CY
-        LONG -- SUFF' -- RING AND OF GREAT GOOD -- NESS.
+
+      \break
+      THE_LORD_IS_FULL OF
+
+      % \break
+      COM -- PAS -- SION AND
+       MER -- CY
+        LONG -- SUFF' -- RING
+      \break
+        AND
+        OF
+         GREAT
+          GOOD
+        -- NESS.
       BLESS THE LORD, O MY SOUL,
+      \break
         BLESS -- ED ART THOU O LORD.
     }
 
@@ -202,68 +243,6 @@
         c4 c c c1 c2. <f f,>1  \bar "|."
       }
     >>
-
-    \new Lyrics \lyricsto "tenor" {
-      BLESS THE LORD, O MY SOUL, BLESS -- ED ART THOU O LORD.
-
-      \break
-      BLESS
-      THE
-      LORD, O MY SOUL, AND ALL THAT IS WITH -- IN ME,
-
-      \break
-      BLESS
-      HIS
-      HO -- LY
-      NAME.
-      BLESS THE LORD, O MY SOUL,
-
-      \break
-      AND
-      FOR -- GET
-      NOT
-      ALL
-      HIS
-      BEN -- NE -- FITS.
-      \once \override LyricText.self-alignment-X = #LEFT
-      WHO_FOR-GIV-ETH_ALL_THINE
-
-      \break
-      IN -- I -- QUI -- TIES;
-      WHO
-      HEAL
-      -- ETH
-      ALL
-      THY DES -- EAS -- ES.
-
-      \break
-      WHO RE -- DEEM -- ETH
-      THY LIFE FROM DE -- STRUC -- TION, WHO CROWN -- ETH
-
-      \break
-      THEE
-      WITH
-      LOVE --
-       ING -- KIND -- NESS AND TEN -- DER MER -- CIES.
-      \once \override LyricText.self-alignment-X = #LEFT
-
-      \break
-      THE_LORD_IS_FULL OF
-
-      % \break
-      COM -- PAS -- SION AND
-       MER -- CY
-        LONG -- SUFF' -- RING
-      \break
-        AND
-        OF
-         GREAT
-          GOOD
-        -- NESS.
-      BLESS THE LORD, O MY SOUL,
-      \break
-        BLESS -- ED ART THOU O LORD.
-    }
 
   >>
 }
