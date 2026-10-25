@@ -45,7 +45,7 @@
   \override Staff.StaffSymbol.thickness = 0.5
   \context {
     \Lyrics
-      \override LyricText.font-size = #-0.7
+      \override LyricText.font-size = #-0.5
       \override LyricHyphen.minimum-distance = #1.0
       \override LyricSpace.minimum-distance =  #1.0
       % \override LyricHyphen.minimum-distance = #0.8
