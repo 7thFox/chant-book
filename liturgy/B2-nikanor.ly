@@ -225,7 +225,7 @@
 
         f4 f f f2. c4 d2 \bar "|"
         d2 c c4 c c c c2. \bar "|"
-        c4 c c2 (d4) a f'1 \bar "||"
+        c4 c c2 (d4) c f1 \bar "||"
 
         f4 f f1 (f2 bes,) c2. c4 f2 \bar "|"
         c2 c c c4 c c c2. c4 c1 \bar "||"
