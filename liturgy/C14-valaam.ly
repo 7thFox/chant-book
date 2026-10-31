@@ -19,10 +19,9 @@
     \if \on-first-page \fill-line {
       \null
       \center-column {
-        \fontsize #4 \bold "O Only-Begotten Son"
+        \fontsize #6 \bold "О Опlу-Веgоттеп Ѕоп"
       }
       \right-column {
-        % \fontsize #8 \bold "C14"
         "Valaam Chant"
       }
     }
@@ -69,7 +68,7 @@
         \startGroup
         d2 d4 (c) d
         \stopGroup
-        (e) f2 g (f) e f (e) d4 (e) f2 (e) f4 (e) d2
+        (e) f2 (g) f e f (e) d4 (e) f2 (e) f4 (e) d2
         \startGroup
         d2 c
         \stopGroup
@@ -77,7 +76,7 @@
 
         f2 e f (g) f e
         d4 (e) f2 (e4 d4) e2
-        f2 e4 (d)
+        f2 (e2) d2
         \once \override HorizontalBracketText.text = "Un."
         \startGroup
         c4 (b)
@@ -89,7 +88,7 @@
         \startGroup
         c4 (b)
         \stopGroup
-        c d e1 d2 e f (e) f (g f e d1) \bar "|"
+        c2 d e1 d2 e f (e) f (g f e d1) \bar "|"
 
         d4 (e) f2 (g) a\fermata
         g2 f e2 f1 e2 (d) d d
@@ -133,7 +132,7 @@
       \ison_right
       d1
 
-      r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2
+      r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2
       \ison_zero
       a4
 
@@ -143,9 +142,9 @@
 
       r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2 r2
       \ison_zero
-      a4
+      a2
 
-      r4 r2 r2
+      r2 r2 r2
       \ison_left
       d2
 
