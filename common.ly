@@ -20,6 +20,7 @@ melody = {
     \override HorizontalBracket.bracket-flare = #'(0 . 0)
     \override HorizontalBracketText.text = "Unison"
     \override HorizontalBracketText.color = #chant_red
+    \override HorizontalBracketText.font-size = #-4
 
 }
 
