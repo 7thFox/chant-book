@@ -9,22 +9,28 @@
 \score {
   <<
     \new Staff <<
-      \new Voice = "melody" \relative c' { \melody
-        % \clef treble
-        c4 (d) e f e d2 d4 c2 \bar "|"
-        c4 d e f f e  d2 d4 c2 \bar "|"
-        c4 d e f e d2 c2 \bar "|"
-        c4 d e f e d2 c2 \bar "|"
-        c4 c d e f e d2 c1 \bar "|."
+      \new Voice = "soprano" \relative c' {
+        \key f \major
+        \voiceOne
+        \cadenzaOn
+        \omit Staff.TimeSignature
+
+        f4 g  a bes a g     f2 \bar "|"
+        f4 g  a bes a g2 g4 f2 \bar "|"
+        f4 g  a bes a g2    f \bar "|"
+        f4 g  a bes a g     f2 \bar "|"
+           g4 a bes a g2    f1 \bar "|."
         }
     >>
 
-    \new Lyrics \lyricsto "melody" {
+    \new Lyrics \lyricsto "soprano" {
       We thank Thee, O Christ our God,
 
-      that Thou hast sat -- is --
+      that Thou hast
       \once \override LyricText.self-alignment-X = #LEFT
-      fied_us_with_Thine earth -- ly gifts;
+      sat-is-fied
+      \once \override LyricText.self-alignment-X = #LEFT
+      us_with_Thine earth -- ly gifts;
 
       de -- prive us
       \once \override LyricText.self-alignment-X = #LEFT
@@ -36,15 +42,13 @@
       \once \override LyricText.self-alignment-X = #LEFT
       came-est_a-
       \once \override LyricText.self-alignment-X = #LEFT
-      mong_Thy_disc -- i -- ples,
+      mong_Thy_disciples,_O_Saviour,_and
 
-      O
-      % \once \override LyricText.self-alignment-X = #LEFT
-      Sav -- iour, and
+      \break
       \once \override LyricText.self-alignment-X = #LEFT
-      gav-est_them_peace,
+      gavest_them peace,
       \once \override LyricText.self-alignment-X = #LEFT
-      come_to_us_and save us.
+      come to us and save us.
     }
   >>
 }
