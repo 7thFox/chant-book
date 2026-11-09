@@ -218,18 +218,19 @@
         \fontsize #6 \bold "O Only-Begotten Son"
       }
       \right-column {
+        \fontsize #8 \bold "C17"
         "Valaam Chant"
       }
     }
     \if \should-print-page-number \fill-line {
       \null
-      \line { C14 - \fromproperty #'page:page-number-string }
+      \line { C17 - \fromproperty #'page:page-number-string }
     }
   }
 
   evenHeaderMarkup = \markup {
     \if \should-print-page-number \fill-line {
-      \line { C14 - \fromproperty #'page:page-number-string }
+      \line { C17 - \fromproperty #'page:page-number-string }
       \null
     }
   }
