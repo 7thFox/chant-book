@@ -1,26 +1,5 @@
 \include "common.ly"
 
-% TODO: GLORY...
-
-%% Remove once draft is complete
-\paper {
-    oddFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-
-  evenFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-}
-
 \layout {
   \context {
     \Score
@@ -36,6 +15,8 @@
         \voiceOne
         \cadenzaOn
         \omit Staff.TimeSignature
+
+        a'4 a4 g a2 a2 \bar "||"
 
         f4 f g2 (a) f4 (g) a bes2 \bar "|"
         a4 a a g2 g4 g f2 \bar "||"
@@ -56,6 +37,8 @@
         \voiceTwo
         \cadenzaOn
 
+        f4 f e f2 f2 \bar "||"
+
         c4 c e2 (f) f2 f4 f2 \bar "|"
         f4 f f e2 e4 e c2 \bar "||"
 
@@ -75,6 +58,13 @@
     >>
 
     \new Lyrics \lyricsto "soprano" {
+
+      \once \override LyricText.self-alignment-X = #LEFT
+      GLORY_TO_THE_FATHER,_AND_TO_THE_SON,_AND_TO_THE
+      HO -- LY SPI -- RIT.
+
+      \break
+
       PRAISE THE LORD, O MY SOUL,
       \once \override LyricText.self-alignment-X = #LEFT
         I_WILL_PRAISE_THE LORD AS LONG AS I LIVE;
@@ -113,6 +103,8 @@
         \clef bass
         \omit Staff.TimeSignature
 
+        c4 c c c2 c2 \bar "||"
+
         a4 a c1 a4 (bes) c d2 \bar "|"
         c4 c d c2 c4 bes a2 \bar "||"
 
@@ -135,6 +127,8 @@
         \clef bass
         \cadenzaOn
         \omit Staff.TimeSignature
+
+        f4 f c f2 f2 \bar "||"
 
         f4 f c2 (f) f f4 <bes bes,>2 \bar "|"
         f4 f d c2 c4 c f2 \bar "||"
