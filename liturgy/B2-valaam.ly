@@ -10,6 +10,31 @@
   indent = 10\mm
 }
 
+\layout {
+  \context {
+    \Score
+    \override NonMusicalPaperColumn.line-break-permission = ##f
+  }
+}
+
+\paper {
+    oddFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+
+  evenFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+}
+
 \score {
   <<
     \new Staff  \with {
@@ -26,6 +51,8 @@
 
     \new Lyrics \lyricsto "melody" {
       Bless the Lord, __ O my soul;
+
+      \break
       Bles -- sed art Thou O Lord.
     }
   >>
@@ -42,19 +69,24 @@
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 (e) c4 (d) e f1 \bar "|"
-        e4 (f) g f e d e f1 e4 e d2 d4 c1 \bar "||" }
+        e4 (f) g2 f4 e e d (e) f1 e4 e d2 d4 c1 \bar "||"
+      }
       \new Voice = "ison" \relative c' { \ison
         \ison_right
         c1 r r2  r  r4 \bar "|"
         \ison_zero
-        a1 r2 r4 r1 r2 g2 r4
+        a1 r2 r2 r4 r1 r2 g2 r4
         \ison_right
-        c1\bar "||" }
+        c1\bar "||"
+      }
     >>
 
     \new Lyrics \lyricsto "melody" {
     Bless the Lord, __ O my soul,
-    and all that is with -- in me bless His ho -- ly name.
+    and all that is with -- in me
+
+    \break
+    bless His ho -- ly name.
     }
   >>
 }
@@ -68,17 +100,22 @@
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 (e) c4 (d) e f1 \bar "|"
-        e4 f g2 f4 e e e e d2 d4 c1 \bar "||" }
+        e4 f g2 f4 e e d2 d4 c1 \bar "||" }
       \new Voice = "ison" \relative c' { \ison
         r1 r r2  r  r4 \bar "|"
-        a4 r r2 r4 r r r r g2 r4
+        a4 r r2 r4 r r g2 r4
         \ison_right
         c1 \bar "||" }
     >>
 
     \new Lyrics \lyricsto "melody" {
     Bless the Lord, __ O my soul,
-    and for -- get not all that He hath done for thee;
+    and for -- get not
+      \once \override LyricText.self-alignment-X = #LEFT
+    all_that_He
+
+    \break
+    hath done for thee;
     }
   >>
 }
@@ -91,17 +128,17 @@
       instrumentName = \markup { "V. 3" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 c d2 e c4 c c d e f f f1 \bar "|"
+        c4 c d2 e c4 c c d e f2 f4 f1 \bar "|"
         e4 (f) g2 f4 e e e d2 d4 c1 \bar "||" }
       \new Voice = "ison" \relative c' { \ison
-        r4 r r2 r r4 r r r r r r r1 \bar "|"
+        r4 r r2 r r4 r r r r r2 r4 r1 \bar "|"
         a4  r  r2 r4 r r r g2 r4
         \ison_right
         c1 \bar "||" }
     >>
 
     \new Lyrics \lyricsto "melody" {
-    Who is gra -- cious un -- to all thine in -- iq -- uit -- ies,
+    Who is gra -- cious un -- to all thine in -- i -- quit -- ies,
     Who heal -- eth all thine in -- firm -- it -- ies;
     }
   >>
@@ -115,17 +152,19 @@
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 e c4 c d e f f1 \bar "|"
-        e4 (f) g2 f4 e e e e e e d2 c1 \bar "||" }
+        e4 (f) g2 f4 e  e d2 c1 \bar "||" }
       \new Voice = "ison" \relative c' { \ison
         r4 r r2 r r4 r r r r r1 \bar "|"
-        a4  r  r2 r4 r r r r r r g2
+        a4  r  r2 r4 r r g2
         \ison_right
         c1 \bar "||" }
     >>
 
     \new Lyrics \lyricsto "melody" {
     Who re -- deem -- eth thy life from cor -- rup -- tion,
-    Who crown -- eth thee with mer -- cy and com -- pas -- sion,
+    Who crown -- eth
+  \once \override LyricText.self-alignment-X = #LEFT
+    thee_with_mer-cy_and com -- pas -- sion,
     }
   >>
 }
@@ -138,17 +177,19 @@
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 e c4 c d e f f1 \bar "|"
-        e4 (f) g2 f4 e e e e e d2 c1 \bar "||" }
+        e4 (f) g2 f4 e  e d2 c1 \bar "||" }
       \new Voice = "ison" \relative c' { \ison
         r4 r r2 r r4 r r r r r1 \bar "|"
-        a4  r  r2 r4 r r r r r g2
+        a4  r  r2 r4 r r g2
         \ison_right
         c1 \bar "||" }
     >>
 
     \new Lyrics \lyricsto "melody" {
     Who ful -- fill -- eth thy de -- sire with good things;
-    thy youth shall be re -- newed as the ea -- gle's.
+    thy youth shall
+  \once \override LyricText.self-alignment-X = #LEFT
+    be_re-newed_as the ea -- gle's.
     }
   >>
 }
@@ -160,20 +201,16 @@
       instrumentName = \markup { "V. 6" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 d2 (e) f4 f f e e e f1 \bar "|"
-        e4 e f g4 f4 e e e e e d e f1 \bar "|"
-        e4 e e e e e d e f2 f2 \bar "|"
-        e4 e f g f e e e e f e d d c1 \bar "||"
+        c4 d2 (e) c4 c c d e f2 f1 \bar "|"
+        e4 e f g4 f4 e e2 d4 e f1 \bar "|"
+        e4 e d e f2 f2 \bar "|"
+        e4 e f g f e e d2 d4 d d c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        % c4 d2 (e) c4 c c c d e f1 \bar "|"
-          r4 r2  r  r4 r r r r r r1 \bar "|"
-        % e4 e f g4 f4 e e e e e d e f1 \bar "|"
-          r4 r r r4 r4 r r r r r r r r1  \bar "|"
-        % e4 e e e e e d e f f1 \bar "|"
-          a4 r r r r r r r r2 r2 \bar "|"
-        % e4 e f g f e e e e f e d d c1 \bar "||"
-          r4 r r r r r r r r g r r r
+          r4 r2  r  r4 r r r r r2 r1 \bar "|"
+          r4 r r r4 r4 r r2 r4 r r1  \bar "|"
+          a4 r r r r2 r2 \bar "|"
+          r4 r r r r r r g2 r4 r r
           \ison_right
           c1 \bar "||"
         }
@@ -181,9 +218,14 @@
 
     \new Lyrics \lyricsto "melody" {
     The Lord __ per -- form -- eth deeds of mer -- cy,
-    and ex -- e -- cut -- eth judge -- ment for all them that are wronged.
-    He hath made His ways known un -- to Mo -- ses,
-    un -- to the sons of Is -- ra -- el the things that He hath willed.
+    and ex -- e -- cut -- eth
+  \once \override LyricText.self-alignment-X = #LEFT
+    judge-ment_for_all them that are wronged.
+  \once \override LyricText.self-alignment-X = #LEFT
+    He_hath_made_His_ways known un -- to Mo -- ses,
+    un -- to the sons of
+  \once \override LyricText.self-alignment-X = #LEFT
+    Is-ra-el the things that He hath willed.
     }
   >>
 }
@@ -192,15 +234,15 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 8a" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 d2 e c4 c c d e f e f1 \bar "|"
-        f4 e e e e e e e e d2 c1 \bar "||"
+        c4 d2 e c4 c d e f f e f1 \bar "|"
+        f4 e  e d2 c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
           r4 r2 r r4 r r r r r r r1 \bar "|"
-          a4 r r r r r r r r g2
+          a4 r r g2
         \ison_right
         c1 \bar "||"
         }
@@ -208,7 +250,9 @@
 
     \new Lyrics \lyricsto "melody" {
       Com -- pass -- ion -- ate and mer -- ci -- ful is the Lord,
-      long- suff -- er -- ing and plen -- te -- ous in mer -- cy;
+      long --
+  \once \override LyricText.self-alignment-X = #LEFT
+      suff-er-ing_and_plen-te-ous in mer -- cy;
     }
   >>
 }
@@ -217,33 +261,34 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 8b" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 c c c d2 (e) e4 f2 f4 e f1 \bar "|"
-        e4 e e e e e e e d e f1 \bar "|"
-        e4 e \breve e4 e d e f1 \bar "|"
-        e4 e f g f e e e e e e d2 d4 c1 \bar "||"
+        c4 c d2 (e) e4 f2 f4 e f1 \bar "|"
+        e4 e d e f1 \bar "|"
+        e4 e d e f1 \bar "|"
+        e4 f g f e e d2 d4 c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        % c4 c c c d2 (e) e4 f2 f4 e f1 \bar "|"
-          r4 r r r r2  r  r4 r2 r4 r r1 \bar "|"
-        % e4 e e e e e e e d e f1 \bar "|"
-          r4 r r r r r r r r r r1 \bar "|"
-        % e4 e \breve e4 e d e f1 \bar "|"
-          a4 r \breve r4 r r r r1 \bar "|"
-        % e4 e f g f e e e e e e d2 d4 c1 \bar "||"
-          r4 r r r r r r r r r r g2 r4
+          r4 r r2  r  r4 r2 r4 r r1 \bar "|"
+          r4 r r r r1 \bar "|"
+          a4 r4 r r r1 \bar "|"
+          r4 r r r r r g2 r4
           \ison_right
           c1 \bar "||"
       }
     >>
 
     \new Lyrics \lyricsto "melody" {
-    Not un -- to the end will He be an -- gered,
-    nei -- ther un -- to e -- tern -- ity will He be wroth.
-    Not according__to__our__iniquities hath He dealt with us,
-    nei -- ther ac -- cord -- ing to our sins hath He re -- ward -- ed us.
+  \once \override LyricText.self-alignment-X = #LEFT
+    Not_un-to the end will He be an -- gered,
+  \once \override LyricText.self-alignment-X = #LEFT
+    nei-ther_un-to_e-tern-ity will He be wroth.
+  \once \override LyricText.self-alignment-X = #LEFT
+    Not_according_to_our_iniquities_hath He dealt with us,
+    nei -- ther ac -- cord --
+  \once \override LyricText.self-alignment-X = #LEFT
+    ing_to_our_sins_hath_He re -- ward -- ed us.
     }
   >>
 }
@@ -252,23 +297,27 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 10" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 c d2 e c4 c c c c c d e f1 \bar "|"
-        e4 e f g f e e e e e e e d2 d4 d c1 \bar "||"
+        c4 c d2 e c4  c d e f1 \bar "|"
+        e4 e f g f e e d2 c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        r4 r r2 r r4 r r r r r r r r1 \bar "|"
-        a4 r r r r r r r r r r4 r g2 r4 r
+        r4 r r2 r r4 r r r r1 \bar "|"
+        a4 r r r4 r r r g2
         \ison_right
         c1 \bar "||"
         }
     >>
 
     \new Lyrics \lyricsto "melody" {
-      For ac -- cord -- ing to the height of hea -- ven from the earth,
-      the Lord hath made His mer -- cy to pre -- vail ov -- er them that fear Him.
+      For ac -- cord -- ing
+    \once \override LyricText.self-alignment-X = #LEFT
+      to_the_height_of_hea -- ven from the earth,
+      the Lord hath made His
+    \once \override LyricText.self-alignment-X = #LEFT
+      mer-cy_to_pre-vail_ov-er_them that fear Him.
     }
   >>
 }
@@ -277,23 +326,27 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 11" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 d2 (e) c4 c c c d e f1 \bar "|"
-        e4 e e e f g f e e e d2 d4 c1 \bar "||"
+        c4 d2 (e) c4 c d e f1 \bar "|"
+        e4 (f) g2 e4 e d2 d4 d4 d c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        r4 r2 r r4 r r r r r r1 \bar "|"
-        a4 r r r r r r r r r g2 r4
+        r4 r2 r r4 r r r r1 \bar "|"
+        a4 r r2 r4 r g2 r4 r4 r
         \ison_right
         c1 \bar "||"
         }
     >>
 
     \new Lyrics \lyricsto "melody" {
-    As far as the east is from the west,
-    so far hath He re -- moved our in -- i -- quit -- ies from us.
+    As far
+    \once \override LyricText.self-alignment-X = #LEFT
+    as_the_east is from the west,
+    so far
+  \once \override LyricText.self-alignment-X = #LEFT
+    hath_He_re-moved_our in -- i -- quit -- ies from us.
     }
   >>
 }
@@ -302,25 +355,27 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 12a" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        d2 (e) c4 d8 ([e]) f4 f f f f f f f e f1 \bar "|"
-        e4 g f e e e e e e d2 d4 d c1 \bar "||"
+        c4 c c d2 e f4 f e f1 \bar "|"
+        e4 (f) g2 e4 e d2 c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        % d2 (e) c4 d8 ([e]) f4 f f f f f f f e f1 \bar "|"
-          r2  r  r4 r8   r   r4 r r r r r r r r r1 \bar "|"
-        % e4 g f e e e e e e d2 d4 d
-          a4 r r r r r r r r g2 r4 r
+        r4 r r r2 r r4 r r r1 \bar "|"
+        a4 r r2 r4 r g2
         \ison_right
         c1 \bar "||"
         }
     >>
 
     \new Lyrics \lyricsto "melody" {
-    Like as a fa -- ther hath com -- pass -- ion up -- on his sons,
-    so hath the Lord had com -- pass -- ion upon them that fear Him;
+    Like as a fa -- ther
+  \once \override LyricText.self-alignment-X = #LEFT
+    hath_com-pass-ion_up -- on his sons,
+    so hath
+  \once \override LyricText.self-alignment-X = #LEFT
+    the_Lord_had_com-pass-ion_upon_them that fear Him;
     }
   >>
 }
@@ -329,7 +384,7 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 12b" }
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 e c4 c d e f1 \bar "|"
@@ -356,17 +411,15 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 13" }
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 (e) c4 c c d e f1 \bar "|"
-        e4 f g f e e e e e e d2 d4 c1 \bar "||"
+        e4 f g f e e d2 d4 c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        % c4 c d2 (e) c4 c c d e f1 \bar "|"
           r4 r r2  r  r4 r r r r r1 \bar "|"
-        % e4 f g f e e e e e e d2 d4
-          a4 r r r r r r r r r g2 r4
+          a4 r r r r r g2 r4
         \ison_right
         c1 \bar "||"
         }
@@ -374,7 +427,9 @@
 
     \new Lyrics \lyricsto "melody" {
     As for man, his days are as the grass;
-    as a flo -- wer of the field, so shall he blos -- som forth.
+    as a flo -- wer
+  \once \override LyricText.self-alignment-X = #LEFT
+    of_the_field,_so_shall he blos -- som forth.
     }
   >>
 }
@@ -383,20 +438,17 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 14" }
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 d2 (e) c4 d e f f e f1 \bar "|"
         e4 f g g4 f1 \bar "|"
-        e4 e f e e e d2 d4 d d c1 \bar "||"
+        e4 e f e e d2 d4 c1 \bar "||"
         }
       \new Voice = "ison" \relative c' { \ison
-        % c4 d2 (e) c4 d e f f e f1 \bar "|"
           r4 r2  r  r4 r r r r r r1 \bar "|"
-        % e4 f g2 g4 f1 \bar "|"
           r4 r r r4 r1 \bar "|"
-        % e4 e f e e e d2 d4 d d
-          a4 r r r r r g2 r4 r r
+          a4 r r r r g2 r4
         \ison_right
         c1 \bar "||"
         }
@@ -405,7 +457,9 @@
     \new Lyrics \lyricsto "melody" {
       For when the wind is passed ov -- er it,
       then it shall be gone,
-      and no long -- er will it know the place there -- of.
+      and no long --
+    \once \override LyricText.self-alignment-X = #LEFT
+      er_will_it_know the place there -- of.
     }
   >>
 }
@@ -414,25 +468,30 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 15" }
     } <<
       \new Voice = "melody" \relative c' { \melody
-        c4 c d2 e c4 d8 ([e]) f4 \breve \break f4 f e f1 \bar "|"
-        e4 e d2 d4 d c1 \bar "||"
-        }
+        c4 c d2 e c4 c d8 ([e]) f4 \break f4 f e f1 \bar "|"
+        e4 e d2  c1 \bar "||"
+      }
       \new Voice = "ison" \relative c' { \ison
-        % c4 c d2 e c4 d8 ([e]) f4 \breve \break f4 f e f1 \bar "|"
-          r4 r r2 r r4 r8   r   r4 \breve \break r4 r r r1 \bar "|"
-        % e4 e d2 d4 d
-          a4 r g2 r4 r
+        r4 r r2 r r4 r r8  r  r4 \break r4 r r r1 \bar "|"
+          a4 r g2
         \ison_right
         c1 \bar "||"
         }
     >>
 
     \new Lyrics \lyricsto "melody" {
-      But the mer -- cy of the Lord is__from__eternity,__even__unto e -- ter -- ni -- ty,
-      up -- on them that fear Him.
+      But the mer -- cy
+    \once \override LyricText.self-alignment-X = #LEFT
+      of_the_Lord_is from e --
+    \once \override LyricText.self-alignment-X = #LEFT
+      ter-ni-ty,
+    \once \override LyricText.self-alignment-X = #LEFT
+      even_unto_e -- ter -- ni -- ty,
+    \once \override LyricText.self-alignment-X = #LEFT
+      up-on_them that fear Him.
     }
   >>
 }
@@ -441,21 +500,18 @@
 \score {
   <<
     \new Staff  \with {
-      instrumentName = \markup { "V. 8" }
+      instrumentName = \markup { "V. 16" }
     } <<
       \new Voice = "melody" \relative c' { \melody
         c4 c d2 e c4 c d e f e f1 \bar "|"
-        e4 e e e e e d e f1 \bar "|"
-        e4 e e e d e f1 f4 e4 d2 c1 \bar "||"
+        e4 e d e f1 \bar "|"
+        e4 e d e f2 f4 e4 d2 c1 \bar "||"
 
         }
       \new Voice = "ison" \relative c' { \ison
-        % c4 c d2 e c4 c d e f e f1 \bar "|"
           r4 r r2 r r4 r r r r r r1 \bar "|"
-        % e4 e e e e e d e f1 \bar "|"
-          r4 r r r r r r r r1 \bar "|"
-        % e4 e e e e d e f1 e4 d2
-          a4 r r r r r r r1 r4 g2
+          r4 r r r r1 \bar "|"
+          a4 r r r r r2 r4 g2
         \ison_right
         c1 \bar "||"
         }
@@ -463,18 +519,204 @@
 
     \new Lyrics \lyricsto "melody" {
       And His right -- eous -- ness is up -- on sons of sons,
-      up -- on them that keep His test -- a -- ment
-      and re -- mem -- ber His com -- mand -- ments to do them.
+    \once \override LyricText.self-alignment-X = #LEFT
+      up-on_them_that_keep His test -- a -- ment
+    \once \override LyricText.self-alignment-X = #LEFT
+      and_re-mem -- ber His com -- mand -- ments to do them.
     }
   >>
 }
 
+% Page 4 A(2)
+\score {
+  <<
+    \new Staff  \with {
+      instrumentName = \markup { "V. 17" }
+    } <<
+      \new Voice = "melody" \relative c' { \melody
+        c4 d2 (e) c4 d e f f f e f1 \bar "|"
+        e4 f g f e e d2 d4 c1 \bar "||"
 
+        }
+      \new Voice = "ison" \relative c' { \ison
+        r4 r2 r r4 r r r r r r r1 \bar "|"
+        a4 r r r r r g2 r4
+        \ison_right
+        c1 \bar "||"
+        }
+    >>
 
-% words = \lyricmode {
-%     The Lord in heaven hath prepared His throne, and His kingdom ruleth over all.
-%     Bless the Lord, all ye His angels, mighty in strength, that perform His word, to hear the voice of His words.
-%     Bless the Lord, all ye His hosts, His ministers that do His will.
-%     Bless the Lord, all ye His works, in every place of His dominion. Bless the Lord, O my soul.
+    \new Lyrics \lyricsto "melody" {
+      The Lord in hea -- ven hath pre -- pared His throne,
+      and His king -- dom rul -- eth ov -- er all.
+    }
+  >>
+}
 
-% }
+% Page 4 B(3)
+\score {
+  <<
+    \new Staff  \with {
+      instrumentName = \markup { "V. 18" }
+    } <<
+      \new Voice = "melody" \relative c' { \melody
+        c4 c d2 (e) c4 d e f2 f1 \bar "|"
+        e4 e d e f1 \bar "|"
+        e4 e e d2 d4 d c1 \bar "||"
+
+        }
+      \new Voice = "ison" \relative c' { \ison
+          r4 r r2  r  r4 r r r2 r1 \bar "|"
+          r4 r r r r1 \bar "|"
+          r4 r r g2 r4 r
+          \ison_right
+          c1 \bar "||"
+        }
+    >>
+
+    \new Lyrics \lyricsto "melody" {
+      Bless the Lord, all ye His an -- gels,
+
+      \once \override LyricText.self-alignment-X = #LEFT
+      might-y_in_strength,_that per -- form His word,
+      to hear the voice of His words.
+    }
+  >>
+}
+
+% Page 5 A(1)
+\score {
+  <<
+    \new Staff  \with {
+      instrumentName = \markup { "V. 19" }
+    } <<
+      \new Voice = "melody" \relative c' { \melody
+        c4 c d2 (e) c4 d e f1 \bar "|"
+        e4 e d2 d4 c1 \bar "||"
+
+        }
+      \new Voice = "ison" \relative c' { \ison
+        r4 r r2  r  r4 r r r1 \bar "|"
+        r4 r g2 r4 \ison_right c1 \bar "||"
+        }
+    >>
+
+    \new Lyrics \lyricsto "melody" {
+      Bless the Lord, all ye His hosts,
+      \once \override LyricText.self-alignment-X = #LEFT
+      His_min-is-ters that do His will.
+    }
+  >>
+}
+
+% Page 5 B(1)
+\score {
+  <<
+    \new Staff  \with {
+      instrumentName = \markup { "V. 20" }
+    } <<
+      \new Voice = "melody" \relative c' { \melody
+        c4 c d2 (e) c4 d e f1 \bar "|"
+        e4 e d2 c1 \bar "||"
+
+        }
+      \new Voice = "ison" \relative c' { \ison
+        r4 r r2  r  r4 r r r1 \bar "|"
+        r4 r g2 \ison_right c1 \bar "||"
+        }
+    >>
+
+    \new Lyrics \lyricsto "melody" {
+    Bless the Lord, all ye His works,
+  \once \override LyricText.self-alignment-X = #LEFT
+    in_ev-ery_place_of_His do -- min -- ion.
+    }
+  >>
+}
+
+% Page 5 A(2)
+\score {
+  <<
+    \new Staff
+    % \with {
+    %   instrumentName = \markup { "V. 20b" }
+    % }
+    <<
+      \new Voice = "melody" \relative c' { \melody
+        d2 e e4 e f2 f1 \bar "|"
+        e4 e e f1 \bar "|"
+        e4 e d2 c1 \bar "||"
+        }
+      \new Voice = "ison" \relative c' { \ison
+        r2 r r4 r r2 r1 \bar "|"
+        r4 r r r1 \bar "|"
+        a4 r g2 \ison_right c1 \bar "||"
+        }
+    >>
+
+    \new Lyrics \lyricsto "melody" {
+      Glo -- ry to the Fa -- ther,
+      and to the Son,
+  \once \override LyricText.self-alignment-X = #LEFT
+      and_to_the_Ho -- ly Spi -- rit.
+    }
+  >>
+}
+
+% Page 5 B(2)
+\score {
+  <<
+    \new Staff
+    % \with {
+    %   instrumentName = \markup { "V. 20b" }
+    % }
+    <<
+      \new Voice = "melody" \relative c'
+      { \melody
+        c4 d2 (e) e4 f2 f1 \bar "|"
+        e4 e d2 d4 d c1 \bar "||"
+      }
+      \new Voice = "ison" \relative c' { \ison
+        r4 r2 r r4 r2 r1 \bar "|"
+        a4 r g2 r4 r a1 \bar "||"
+        }
+    >>
+
+    \new Lyrics \lyricsto "melody" {
+      Both now and ev -- er,
+      \once \override LyricText.self-alignment-X = #LEFT
+      and_un-to_the_a-ges of a -- ges. A -- men.
+    }
+  >>
+}
+
+% Page 5 A(3)
+\score {
+  <<
+    \new Staff  \with {
+      instrumentName = \markup { "V. 1" }
+    } <<
+      \new Voice = "melody" \relative c' { \melody
+        c4 c d2 (e) c4 (d) e f1 \bar "|"
+        e4 e d (e) f1 \bar "|"
+        e4 e d e f1 \bar "|"
+        e4 e e d2 d4 c1 \bar "|."
+
+      }
+      \new Voice = "ison" \relative c' { \ison
+        r4 r r2 r r4 r r r1 \bar "|"
+        r4  r  r r r1 \bar "|"
+        r4 r r  r r1 \bar "|"
+        r4 r r g2 r4 \ison_right c1 \bar "|."
+      }
+    >>
+
+    \new Lyrics \lyricsto "melody" {
+    Bless the Lord, O my soul,
+      \once \override LyricText.self-alignment-X = #LEFT
+    and_all_that_is with -- in me
+    bless His ho -- ly name.
+    Bles -- sed art Thou O Lord.
+    }
+  >>
+}
