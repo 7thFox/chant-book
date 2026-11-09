@@ -1,9 +1,67 @@
 \include "common.ly"
 
-\header {
-  title    = "The First Antiphon"
-  subtitle = "Psalm 102"
-  composer = "Valaam Chant"
+% Some general guidelines:
+%   - Note elision should occur once 2 or more noteheads can be removed
+%   - Elision should have one leading quarter and one ending quarter of the same
+%       pitch to lead into the change
+%   - Words within elision should NOT be hyphenated on syllables unless it has
+%       multiple ways of being pronounced.
+
+\paper {
+
+  oddHeaderMarkup = \markup {
+    \if \on-first-page \fill-line {
+      \null
+      \center-column {
+        \fontsize #4 \bold "The First Antiphon"
+        "Psalm 102"
+      }
+      \right-column {
+        \fontsize #8 \bold "B2"
+        "Bishop Nikanor"
+      }
+    }
+    \if \should-print-page-number \fill-line {
+      \null
+      \line { B2 - \fromproperty #'page:page-number-string }
+    }
+  }
+
+  evenHeaderMarkup = \markup {
+    \if \should-print-page-number \fill-line {
+      \line { B2 - \fromproperty #'page:page-number-string }
+      \null
+    }
+  }
+}
+
+%% Remove once draft is complete
+\paper {
+    oddFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+
+  evenFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+}
+
+% Typically we want to uncomment this towards the
+% end of drafting and place manual breaks in order
+% to optimize space on the page
+\layout {
+  \context {
+    \Score
+    % \override NonMusicalPaperColumn.line-break-permission = ##f
+  }
 }
 
 \score {

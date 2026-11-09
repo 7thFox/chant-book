@@ -1,6 +1,6 @@
 \version "2.24.0"
 
-#(set-global-staff-size 24)
+#(set-global-staff-size 21)
 
 chant_red = #(rgb-color 0.60 0.00 0.00)
 ison_zero   = { \override NoteColumn.force-hshift = #0     }
@@ -42,10 +42,12 @@ ison = {
 }
 
 \layout {
+  \override Staff.StaffSymbol.thickness = 0.5
   \context {
     \Lyrics
+    \override LyricText.font-size = #-0.5
     \override LyricHyphen.minimum-distance = #1.0
-    \override LyricSpace.minimum-distance = #1.2
+    \override LyricSpace.minimum-distance =  #1.0
   }
   \context {
     \Voice
@@ -64,4 +66,16 @@ ison = {
   property-defaults.fonts.serif = "Monomakh"
   property-defaults.fonts.sans = "Monomakh"
   property-defaults.fonts.typewriter = "Monomakh"
+
+  system-system-spacing =
+    #'((basic-distance . 8)
+       (minimum-distance . 4)
+       (padding . 1)`
+       (stretchability . 0))
+}
+
+\header {
+  title    = ##f %"The First Antiphon"
+  subtitle = ##f %"Psalm 102"
+  composer = ##f %"Bishop Nikanor"
 }
