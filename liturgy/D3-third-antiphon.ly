@@ -1,27 +1,5 @@
 \include "common.ly"
 
-% TODO: The number of accidentals leads me to believe this is better in another key
-% TODO: remove hyphenation from elision
-
-%% Remove once draft is complete
-\paper {
-    oddFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-
-  evenFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-}
-
 \layout {
   \context {
     \Score
@@ -42,7 +20,7 @@
         bes4 bes a2 a \bar "||"
 
         a4 a d2 (a4 b) c2 (bes) \bar "|"
-        bes4 bes a2 a \bar "||"
+        bes4 bes bes bes a2 a \bar "||"
 
         % on 12
         a4 a a d2 a4 (b) c2 (bes) \bar "|"
@@ -52,11 +30,11 @@
         bes4 bes a2 a4 a4 a2 \bar "||"
 
         % on 10
-        a4 a d2 a4 (b) c2 (bes) \bar "|"
+        a4 a a d2 a4 (b) c2 (bes) \bar "|"
         bes4 bes a2 \bar "||"
 
         a4 a d2 a4 (b) c2 (bes) \bar "|"
-        bes4 bes bes bes bes a2 a \bar "||"
+        bes4 bes a2 a \bar "||"
 
         % on 8
         a4 a d2 a4 (b) c2 (bes) \bar "|"
@@ -87,7 +65,7 @@
         <g e>4 <g e>4 f2 f2 \bar "||"
 
         f4 f f1 e2 (<g e>)  \bar "|"
-        <g e>4 <g e>4 f2 f2 \bar "||"
+        <g e>4 <g e>4 <g e>4 <g e>4 f2 f2 \bar "||"
 
         % on 12
         f4 f f f2 f e (<g e>)  \bar "|"
@@ -97,11 +75,11 @@
         <g e>4 <g e>4 f2 f4 f f2 \bar "||"
 
         % on 10
-        f4 f f2 f e (<g e>)  \bar "|"
+        f4 f f f2 f e (<g e>)  \bar "|"
         <g e>4 <g e>4 f2 \bar "||"
 
         f4 f f2 f e (<g e>)  \bar "|"
-        <g e>4 <g e>4 <g e>4 <g e>4 <g e>4 f2 f \bar "||"
+        <g e>4 <g e>4 f2 f \bar "||"
 
         % on 8
         f4 f f2 f e (<g e>)  \bar "|"
@@ -130,94 +108,102 @@
     \new Lyrics \lyricsto "soprano" {
 
         \once \override LyricText.self-alignment-X = #LEFT
-        IN_THY_KING-DOM_RE-MEM -- BER US O LORD,
+        IN_THY_KINGDOM_REMEM -- BER US O LORD,
           \once \override LyricText.self-alignment-X = #LEFT
-          WHEN_THOU_COM-EST_IN-TO THY
+          WHEN_THOU_COMEST_INTO
       \break
+          THY
           KING -- DOM.
 
         \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE_THE_POOR IN SPI -- RIT,
-          \once \override LyricText.self-alignment-X = #LEFT
-          FOR_THEIRS_IS_THE_KING-DOM
+        BLESSED_ARE_THE_POOR IN SPI -- RIT,
+        FOR THEIRS
       \break
+          \once \override LyricText.self-alignment-X = #LEFT
+          IS_THE_KINGDOM
           OF HEAV -- EN.
 
-        \mark \markup { On 12 Verses }
+        \mark \markup \with-color #chant_red { On 12 Verses }
         BLESS -- ED ARE THEY THAT MOURN,
+      \break
+
           \once \override LyricText.self-alignment-X = #LEFT
         FOR_THEY_SHALL BE
-      \break
         COM -- FOR -- TED.
 
         BLESS -- ED ARE THE MEEK,
+      \break
+
           \once \override LyricText.self-alignment-X = #LEFT
         FOR_THEY_SHALL IN -- HER -- IT THE EARTH.
 
-      \break
-        \mark \markup { On 10 Verses }
+        \mark \markup \with-color #chant_red { On 10 Verses }
           \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE_THEY_THAT_HUN-GER_AND_THIRST FOR RIGHT -- EOUS -- NESS,
+        BLESSED_ARE_THEY_THAT_HUNGER_AND
       \break
+        THIRST
+        FOR RIGHT -- EOUS -- NESS,
           \once \override LyricText.self-alignment-X = #LEFT
         FOR_THEY_SHALL BE FILLED.
 
           \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE THE MER -- CI -- FUL,
-        FOR THEY
+        BLESSED_ARE THE
       \break
-        SHALL OB -- TAIN MER -- CY.
-
-        \mark \markup { On 8 Verses }
+        MER -- CI -- FUL,
           \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE THE PURE IN HEART,
+        FOR_THEY_SHALL_OB -- TAIN MER -- CY.
+
+        \mark \markup \with-color #chant_red { On 8 Verses }
+          \once \override LyricText.self-alignment-X = #LEFT
+        BLESSED_ARE THE
+      \break
+        PURE IN HEART,
           \once \override LyricText.self-alignment-X = #LEFT
         FOR_THEY_SHALL SEE
-      \break
         GOD.
 
           \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE THE PEACE -- MAK -- ERS
-          \once \override LyricText.self-alignment-X = #LEFT
-        FOR_THEY_SHALL_BE_CALLED
-        THE
-        \break
-        SONS OF GOD
+        BLESSED_ARE THE
 
-        \mark \markup { On 6 Verses }
-          \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE_THEY_WHICH_ARE_PER-SE-CUT-ED FOR RIGHT -- EOUS -- NESS
       \break
-        SAKE,
+        PEACE -- MAK -- ERS
           \once \override LyricText.self-alignment-X = #LEFT
-        FOR_THEIRS_IS_THE_KING-DOM OF HEA -- VEN.
+        FOR_THEY_SHALL_BE_CALLED THE SONS OF GOD
 
+      \break
+        \mark \markup \with-color #chant_red { On 6 Verses }
           \once \override LyricText.self-alignment-X = #LEFT
-        BLESS-ED_ARE_YE_WHEN_MEN
+        BLESSED_ARE_THEY_WHICH_ARE_PERSECUTED FOR RIGHT -- EOUS -- NESS SAKE,
       \break
           \once \override LyricText.self-alignment-X = #LEFT
-        SHALL_RE-VILE_YOU
+        FOR_THEIRS_IS_THE_KINGDOM OF HEA -- VEN.
+
+          \once \override LyricText.self-alignment-X = #LEFT
+        BLESSED_ARE_YE_WHEN_MEN
+      \break
+          \once \override LyricText.self-alignment-X = #LEFT
+        SHALL_REVILE_YOU
         AND PER -- SE -- CUTE YOU,
           \once \override LyricText.self-alignment-X = #LEFT
-        AND_SHALL_SAY_ALL_MAN-NER_OF_EV-IL
+        AND_SHALL_SAY_ALL_MANNER_OF_EVIL
       \break
         A -- GAINST YOU FALSE -- LY
         FOR MY SAKE
 
           \once \override LyricText.self-alignment-X = #LEFT
-        RE-JOICE_AND_BE EX -- CEED -- ING -- LY GLAD,
+        REJOICE_AND_BE EX -- CEED -- ING -- LY GLAD,
       \break
           \once \override LyricText.self-alignment-X = #LEFT
-        FOR_GREAT_IS_YOUR_RE-WARD IN HEA -- VEN.
+        FOR_GREAT_IS_YOUR_REWARD IN HEA -- VEN.
 
           \once \override LyricText.self-alignment-X = #LEFT
-        GLOR-Y_TO_THE_FA-THER_AND_TO
+        GLORY_TO_THE_FATHER_AND_TO
       \break
           \once \override LyricText.self-alignment-X = #LEFT
         THE_SON_AND_TO_THE_HO -- LY SPI -- RIT
 
           \once \override LyricText.self-alignment-X = #LEFT
-        BOTH_NOW_AND_EV-ER_AND_UN-TO
+        BOTH_NOW_AND_EVER_AND_UNTO
       \break
         A -- GES OF A -- GES. A -- MEN.
     }
@@ -235,7 +221,7 @@
         c4 c4 c2 c2 \bar "||"
 
         c4 c a2. (d4) g,2 (c2) \bar "|"
-        c4 c4 c2 c2 \bar "||"
+        c4 c4 c c c2 c2 \bar "||"
 
         % on 12
         c4 c c a2 a4 (d4) g,2 (c2) \bar "|"
@@ -245,11 +231,11 @@
         c4 c4 c2 c4 c c2 \bar "||"
 
         % on 10
-        c4 c a2 a4 (d4) g,2 (c2) \bar "|"
+        c4 c c a2 a4 (d4) g,2 (c2) \bar "|"
         c4 c4 c2 \bar "||"
 
         c4 c a2 a4 (d4) g,2 (c2) \bar "|"
-        c4 c c c c4 c2 c2 \bar "||"
+        c4 c4 c2 c2 \bar "||"
 
         % on 8
         c4 c a2 a4 (d4) g,2 (c2) \bar "|"
@@ -285,7 +271,7 @@
         c4 c4 f2 f2 \bar "||"
 
         f4 f4 d2. (g4) c,1 \bar "|"
-        c4 c4 f2 f2 \bar "||"
+        c4 c c c4 f2 f2 \bar "||"
 
         % on 12
         f4 f f4 d2 d4 (g4) c,1 \bar "|"
@@ -295,11 +281,11 @@
         c4 c4 f2 f4 f f2 \bar "||"
 
         % on 10
-        f4 f4 d2 d4 (g4) c,1 \bar "|"
+        f4 f4 f d2 d4 (g4) c,1 \bar "|"
         c4 c4 f2 \bar "||"
 
         f4 f4 d2 d4 (g4) c,1 \bar "|"
-        c4 c c c c4 f2 f2 \bar "||"
+        c4 c4 f2 f2 \bar "||"
 
         % on 8
         f4 f4 d2 d4 (g4) c,1 \bar "|"
