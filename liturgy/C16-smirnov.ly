@@ -1,34 +1,5 @@
 \include "common.ly"
 
-% TODO: reconsider adding litinies
-% TODO: Assign number
-
-%% Remove once draft is complete
-\paper {
-    oddFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-
-  evenFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-}
-
-\layout {
-  \context {
-    \Score
-    % \override NonMusicalPaperColumn.line-break-permission = ##f
-  }
-}
-
 \score {
   <<
     \new Staff <<
@@ -72,7 +43,7 @@
     \new Lyrics \lyricsto "soprano" {
 
       \once \override LyricText.self-alignment-X = #LEFT
-      [GLORY...]_BOTH_NOW_AND_EVER_AND_UNTO_THE_A -- GES OF A -- GES. A -- MEN.
+      BOTH_NOW_AND_EVER_AND_UNTO_THE_A -- GES OF A -- GES. A -- MEN.
 
     \break
       O ON -- LY BE -- GOT --
@@ -146,6 +117,76 @@
   >>
 }
 
+\markup \fill-line {
+  \null
+  \center-column {
+    \fontsize #4 \bold "The Small Litany"
+  }
+  \null
+}
+
+\score {
+  \layout { ragged-last = ##f }
+  <<
+    \new Staff <<
+      \new Voice = "soprano" \relative c'' {
+        \key f \major
+        \voiceOne
+        \cadenzaOn
+        \omit Staff.TimeSignature
+
+        a2. g4 a (g f2) g1 \bar "|"
+        g2 (f4) g a (g f g) a1 \bar "||"
+        g4 (a) bes2 (a2.) g4 a2 (g f1) \bar "||"
+        a2. (g4) f2 (g a1) \bar "|."
+      }
+      \new Voice = "alto" \relative c' {
+        \voiceTwo
+        \cadenzaOn
+
+        f2. e4 f (e d2) e1 \bar "|"
+        e2 (d4) e f (e d e) f1 \bar "||"
+        d4 (f) f2 (f2.) e4 f2 (e d1) \bar "||"
+        f2. (e4) d2 (e f1) \bar "|."
+      }
+    >>
+
+    \new Lyrics \lyricsto "soprano" {
+      LORD, HAVE MER -- CY.
+      LORD, HAVE MER -- CY.
+      \break
+      TO THEE, O LORD.
+      A -- MEN.
+    }
+
+    \new Staff <<
+
+      \new Voice = "tenor" \relative c' {
+        \key f \major
+        \cadenzaOn
+        \voiceOne
+        \clef bass
+        \omit Staff.TimeSignature
+
+        c2. c4 c2 (a4 c) c1 \bar "|"
+        c2 (a4) c c2 (a4 c) c1 \bar "||"
+        bes4 (c) d2 (c2.) c4 c1 (a) \bar "||"
+        c1 a2 (c2 ~ c1) \bar "|."
+      }
+
+      \new Voice = "bass" \relative c {
+        \key f \major
+        \voiceTwo
+        \clef bass
+        \cadenzaOn
+        \omit Staff.TimeSignature
+
+        % f4 f c f c d2 c1 \bar "||"
+      }
+    >>
+
+  >>
+}
 
 \paper {
   oddHeaderMarkup = \markup {
@@ -155,20 +196,20 @@
         \fontsize #4 \bold "O Only-Begotten Son"
       }
       \right-column {
-        % \fontsize #8 \bold "C14"
+        \fontsize #8 \bold "C16"
         "abbr. Znamenny Chant"
         "arr. E. Smirnov"
       }
     }
     \if \should-print-page-number \fill-line {
       \null
-      \line { C14 - \fromproperty #'page:page-number-string }
+      \line { C16 - \fromproperty #'page:page-number-string }
     }
   }
 
   evenHeaderMarkup = \markup {
     \if \should-print-page-number \fill-line {
-      \line { C14 - \fromproperty #'page:page-number-string }
+      \line { C16 - \fromproperty #'page:page-number-string }
       \null
     }
   }
