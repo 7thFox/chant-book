@@ -1,5 +1,7 @@
 \include "common.ly"
 
+#(set-global-staff-size 24)
+
 \header {
   title    = "Prayer After Meals"
   subtitle = "Tone 8"
@@ -8,7 +10,7 @@
 
 \score  {
   <<
-    % \transpose g f
+    \transpose g f
 
     \new Staff <<
       \new Voice = "soprano" \relative c'' {
@@ -20,7 +22,7 @@
         g4 a  b c     b a     g2 \bar "|"
         g4 a  b c c c b a2 a4 g2 \bar "|"
         g4 a  b c c c b a2    g \bar "|"
-        g4 a  b c c c b a     g2 \bar "|"
+        g4 a  b c c c b b a     g2 \bar "|"
            a4 b c     b a2    g1 \bar "|."
       }
 
@@ -32,7 +34,7 @@
         d4 fis  g g     g fis       d2 \bar "|"
         d4 fis  g g g g g fis2 fis4 d2 \bar "|"
         d4 fis  g g g g g fis2      d \bar "|"
-        d4 fis  g g g g g fis       d2 \bar "|"
+        d4 fis  g g g g g g fis       d2 \bar "|"
            fis4 g g     g fis2      d1 \bar "|."
       }
     >>
@@ -50,13 +52,14 @@
       \once \override LyricText.self-alignment-X = #LEFT
       not of Thy
       \once \override LyricText.self-alignment-X = #LEFT
-      hea-ven-ly king -- dom,
+      heavenly king -- dom,
 
       but as Thou
       \once \override LyricText.self-alignment-X = #LEFT
       came -- est a-
+      mong
       \once \override LyricText.self-alignment-X = #LEFT
-      mong_Thy_disciples,_O_Saviour,_and
+      Thy_disciples,_O_Saviour,_and
 
       \break
       \once \override LyricText.self-alignment-X = #LEFT
@@ -65,6 +68,7 @@
       come to us and save us.
     }
 
+    \transpose g f
     \new Staff <<
       \new Voice = "tenor" \relative c' {
         \voiceOne
@@ -76,7 +80,7 @@
         b4 d  d e d d     b2 \bar "|"
         b4 d  d e e e d d2 d4 b2 \bar "|"
         b4 d  d e e e d d2    b  \bar "|"
-        b4 d  d e e e d d     b2 \bar "|"
+        b4 d  d e e e d d d     b2 \bar "|"
            d4 d e d d2    b1 \bar "|."
       }
 
@@ -88,7 +92,7 @@
         g4 d  g c, g' d     g2 \bar "|"
         g4 d  g c, c e g d2 d4 g2 \bar "|"
         g4 d  g c, c e g d2    g \bar "|"
-        g4 d  g c, c e g d     g2 \bar "|"
+        g4 d  g c, c e g g d     g2 \bar "|"
            d4 g c, g' d2    g1 \bar "|."
       }
     >>

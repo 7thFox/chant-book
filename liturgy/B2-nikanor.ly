@@ -1,19 +1,8 @@
 \include "common.ly"
 
-#(set-global-staff-size 21)
-
-\header {
-  title    = ##f %"The First Antiphon"
-  subtitle = ##f %"Psalm 102"
-  composer = ##f %"Bishop Nikanor"
-}
+% Runtime: ~1m30
 
 \paper {
-  system-system-spacing =
-    #'((basic-distance . 8)
-       (minimum-distance . 4)
-       (padding . 1)`
-       (stretchability . 0))
 
   oddHeaderMarkup = \markup {
     \if \on-first-page \fill-line {
@@ -41,17 +30,6 @@
   }
 }
 
-\layout {
-  \override Staff.StaffSymbol.thickness = 0.5
-  \context {
-    \Lyrics
-      \override LyricText.font-size = #-0.5
-      \override LyricHyphen.minimum-distance = #1.0
-      \override LyricSpace.minimum-distance =  #1.0
-      % \override LyricHyphen.minimum-distance = #0.8
-      % \override LyricSpace.minimum-distance = #0.8
-  }
-}
 \layout {
   \context {
     \Score
