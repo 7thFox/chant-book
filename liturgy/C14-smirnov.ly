@@ -1,57 +1,27 @@
 \include "common.ly"
 
-#(set-global-staff-size 21)
+% TODO: reconsider adding litinies
+% TODO: Assign number
 
-\header {
-  title    = ##f %"The First Antiphon"
-  subtitle = ##f %"Psalm 102"
-  composer = ##f %"Bishop Nikanor"
-}
-
+%% Remove once draft is complete
 \paper {
-  system-system-spacing =
-    #'((basic-distance . 8)
-       (minimum-distance . 4)
-       (padding . 1)`
-       (stretchability . 0))
-
-  oddHeaderMarkup = \markup {
-    \if \on-first-page \fill-line {
-      \null
-      \center-column {
-        \fontsize #4 \bold "O Only-Begotten Son"
-      }
-      \right-column {
-        % \fontsize #8 \bold "C14"
-        "abbr. Znamenny Chant"
-        "arr. E. Smirnov"
-      }
-    }
-    \if \should-print-page-number \fill-line {
-      \null
-      \line { C14 - \fromproperty #'page:page-number-string }
+    oddFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
     }
   }
 
-  evenHeaderMarkup = \markup {
-    \if \should-print-page-number \fill-line {
-      \line { C14 - \fromproperty #'page:page-number-string }
-      \null
+  evenFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
     }
   }
 }
 
-\layout {
-  \override Staff.StaffSymbol.thickness = 0.5
-  \context {
-    \Lyrics
-      \override LyricText.font-size = #-0.5
-      \override LyricHyphen.minimum-distance = #1.0
-      \override LyricSpace.minimum-distance =  #1.0
-      % \override LyricHyphen.minimum-distance = #0.8
-      % \override LyricSpace.minimum-distance = #0.8
-  }
-}
 \layout {
   \context {
     \Score
@@ -174,4 +144,32 @@
     >>
 
   >>
+}
+
+
+\paper {
+  oddHeaderMarkup = \markup {
+    \if \on-first-page \fill-line {
+      \null
+      \center-column {
+        \fontsize #4 \bold "O Only-Begotten Son"
+      }
+      \right-column {
+        % \fontsize #8 \bold "C14"
+        "abbr. Znamenny Chant"
+        "arr. E. Smirnov"
+      }
+    }
+    \if \should-print-page-number \fill-line {
+      \null
+      \line { C14 - \fromproperty #'page:page-number-string }
+    }
+  }
+
+  evenHeaderMarkup = \markup {
+    \if \should-print-page-number \fill-line {
+      \line { C14 - \fromproperty #'page:page-number-string }
+      \null
+    }
+  }
 }

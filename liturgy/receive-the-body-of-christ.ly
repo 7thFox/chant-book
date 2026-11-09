@@ -1,5 +1,7 @@
 \include "../common.ly"
 
+#(set-global-staff-size 24)
+
 \header {
   title    = "Receive the Body of Christ"
   composer = "Valaam Chant"

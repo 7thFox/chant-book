@@ -1,56 +1,27 @@
 \include "common.ly"
 
-#(set-global-staff-size 21)
+% TODO: The number of accidentals leads me to believe this is better in another key
+% TODO: remove hyphenation from elision
 
-\header {
-  title    = ##f %"The First Antiphon"
-  subtitle = ##f %"Psalm 102"
-  composer = ##f %"Bishop Nikanor"
-}
-
+%% Remove once draft is complete
 \paper {
-  system-system-spacing =
-    #'((basic-distance . 8)
-       (minimum-distance . 4)
-       (padding . 1)`
-       (stretchability . 0))
-
-  oddHeaderMarkup = \markup {
-    \if \on-first-page \fill-line {
-      \null
-      \center-column {
-        \fontsize #4 \bold "The Third Antiphon"
-        "The Beatitudes"
-      }
-      \right-column {
-        \fontsize #8 \bold "D3"
-      }
-    }
-    \if \should-print-page-number \fill-line {
-      \null
-      \line { D3 - \fromproperty #'page:page-number-string }
+    oddFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
     }
   }
 
-  evenHeaderMarkup = \markup {
-    \if \should-print-page-number \fill-line {
-      \line { D3 - \fromproperty #'page:page-number-string }
-      \null
+  evenFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
     }
   }
 }
 
-\layout {
-  \override Staff.StaffSymbol.thickness = 0.5
-  \context {
-    \Lyrics
-      \override LyricText.font-size = #-0.5
-      \override LyricHyphen.minimum-distance = #1.0
-      \override LyricSpace.minimum-distance =  #1.0
-      % \override LyricHyphen.minimum-distance = #0.8
-      % \override LyricSpace.minimum-distance = #0.8
-  }
-}
 \layout {
   \context {
     \Score
@@ -94,7 +65,7 @@
         a4 a d2 a4 (b) c2 (bes) \bar "|"
         bes4 bes a2 a4 a2 \bar "||"
 
-        % BLESSED ARE THEY WHICH ARE PERSECUTED..
+        % on 6
         a4 a d2 a4 b c2 (bes) \bar "|"
         bes4 bes a2 a2 \bar "||"
 
@@ -102,7 +73,7 @@
         bes4 bes bes bes a2 a4 a a a2 \bar "||"
 
         % REJOICE...
-        a4 a d2 a4 (b) c2 (bes) \bar "|"
+        a4 a d2 a4 b c2 (bes) \bar "|"
         bes4 bes a2 a2 \bar "||"
 
         a4 a a d2 (a4 b) c2 (bes) \bar "||"
@@ -139,7 +110,7 @@
         f4 f f2 f e (<g e>)  \bar "|"
         <g e>4 <g e>4 f2 f4 f2 \bar "||"
 
-        % BLESSED ARE THEY WHICH ARE PERSECUTED..
+        % on 6
         f4 f f2 f4 f4 e2 (<g e>)  \bar "|"
         <g e>4 <g e>4 f2 f2 \bar "||"
 
@@ -147,7 +118,7 @@
         <g e>4 <g e>4 <g e>4 <g e>4 f2 f4 f f f2 \bar "||"
 
         % REJOICE...
-        f4 f f2 f e (<g e>)  \bar "|"
+        f4 f f2 f e <g e>  \bar "|"
         <g e>4 <g e>4 f2 f2 \bar "||"
 
         f4 f f f1 e2 (<g e>)  \bar "||"
@@ -213,6 +184,7 @@
         \break
         SONS OF GOD
 
+        \mark \markup { On 6 Verses }
           \once \override LyricText.self-alignment-X = #LEFT
         BLESS-ED_ARE_THEY_WHICH_ARE_PER-SE-CUT-ED FOR RIGHT -- EOUS -- NESS
       \break
@@ -233,7 +205,7 @@
         FOR MY SAKE
 
           \once \override LyricText.self-alignment-X = #LEFT
-        RE-JOICE_AND_BE EX -- CEED -- ING GLAD,
+        RE-JOICE_AND_BE EX -- CEED -- ING -- LY GLAD,
       \break
           \once \override LyricText.self-alignment-X = #LEFT
         FOR_GREAT_IS_YOUR_RE-WARD IN HEA -- VEN.
@@ -286,7 +258,7 @@
         c4 c a2 a4 (d4) g,2 (c2) \bar "|"
         c4 c4 c2 c4 c2 \bar "||"
 
-        % BLESSED ARE THEY WHICH ARE PERSECUTED..
+        % on 6
         c4 c a2 a4 d4 g,2 (c2) \bar "|"
         c4 c4 c2 c2 \bar "||"
 
@@ -294,7 +266,7 @@
         c4 c c c4 c2 c4 c c c2 \bar "||"
 
         % REJOICE...
-        c4 c a2 a4 (d4) g,2 (c2) \bar "|"
+        c4 c a2 a4 d4 g,2 c2 \bar "|"
         c4 c4 c2 c2 \bar "||"
 
 
@@ -336,7 +308,7 @@
         f4 f4 d2 d4 (g4) c,1 \bar "|"
         c4 c4 f2 f4 f2 \bar "||"
 
-        % BLESSED ARE THEY WHICH ARE PERSECUTED..
+        % on 6
         f4 f4 d2 d4 g4 c,1 \bar "|"
         c4 c4 f2 f2 \bar "||"
 
@@ -344,7 +316,7 @@
         c4 c c c4 f2 f4 f f f2 \bar "||"
 
         % REJOICE...
-        f4 f4 d2 d4 (g4) c,1 \bar "|"
+        f4 f4 d2 d4 g4 c,1 \bar "|"
         c4 c4 f2 f2 \bar "||"
 
         f4 f f4 d2. (g4) c,1 \bar "||"
@@ -353,4 +325,30 @@
     >>
 
   >>
+}
+
+\paper {
+  oddHeaderMarkup = \markup {
+    \if \on-first-page \fill-line {
+      \null
+      \center-column {
+        \fontsize #4 \bold "The Third Antiphon"
+        "The Beatitudes"
+      }
+      \right-column {
+        \fontsize #8 \bold "D3"
+      }
+    }
+    \if \should-print-page-number \fill-line {
+      \null
+      \line { D3 - \fromproperty #'page:page-number-string }
+    }
+  }
+
+  evenHeaderMarkup = \markup {
+    \if \should-print-page-number \fill-line {
+      \line { D3 - \fromproperty #'page:page-number-string }
+      \null
+    }
+  }
 }

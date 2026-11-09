@@ -5,6 +5,28 @@
   composer = "Valaam Chant"
 }
 
+
+#(set-global-staff-size 24)
+
+%% Remove once draft is complete
+\paper {
+    oddFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+
+  evenFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+}
+
 \score {
   <<
     \new Staff <<

@@ -1,5 +1,27 @@
 \include "../common.ly"
 
+#(set-global-staff-size 24)
+
+% TODO: Breve
+
+%% Remove once draft is complete
+\paper {
+    oddFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+
+  evenFooterMarkup = \markup {
+    \fill-line {
+      ""
+      \italic "DRAFT"
+      ""
+    }
+  }
+}
 \header {
   title    = "Now Lettest Thou Thy Servant"
   composer = "Valaam Chant"
