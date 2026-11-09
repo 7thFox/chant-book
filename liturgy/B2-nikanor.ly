@@ -120,7 +120,7 @@
       HIS
       BEN -- NE -- FITS.
       \once \override LyricText.self-alignment-X = #LEFT
-      WHO_FOR-GIV-ETH_ALL_THINE
+      WHO_FORGIVETH_ALL_THINE
 
       \break
       IN -- I -- QUI -- TIES;
@@ -139,9 +139,9 @@
       WITH
       LOVE --
        ING -- KIND -- NESS AND TEN -- DER MER -- CIES.
-      \once \override LyricText.self-alignment-X = #LEFT
 
       \break
+      \once \override LyricText.self-alignment-X = #LEFT
       THE_LORD_IS_FULL OF
 
       % \break
