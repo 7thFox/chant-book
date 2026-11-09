@@ -354,38 +354,20 @@
         "Psalm 102 (Shortened)"
       }
       \right-column {
-        % \fontsize #8 \bold "B2"
+        \fontsize #8 \bold "B15"
         "Valaam Chant"
       }
     }
     \if \should-print-page-number \fill-line {
       \null
-      \line { B2 - \fromproperty #'page:page-number-string }
+      \line { B15 - \fromproperty #'page:page-number-string }
     }
   }
 
   evenHeaderMarkup = \markup {
     \if \should-print-page-number \fill-line {
-      \line { B2 - \fromproperty #'page:page-number-string }
+      \line { B15 - \fromproperty #'page:page-number-string }
       \null
-    }
-  }
-}
-
-\paper {
-    oddFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-
-  evenFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
     }
   }
 }

@@ -1,7 +1,5 @@
 \include "../common.ly"
 
-% TODO: Assign Number
-
 #(set-global-staff-size 22)
 
 \layout {
@@ -774,38 +772,20 @@
         "Psalm 102"
       }
       \right-column {
-        % \fontsize #8 \bold "B2"
+        \fontsize #8 \bold "B14"
         "Valaam Chant"
       }
     }
     \if \should-print-page-number \fill-line {
       \null
-      \line { B2 - \fromproperty #'page:page-number-string }
+      \line { B14 - \fromproperty #'page:page-number-string }
     }
   }
 
   evenHeaderMarkup = \markup {
     \if \should-print-page-number \fill-line {
-      \line { B2 - \fromproperty #'page:page-number-string }
+      \line { B14 - \fromproperty #'page:page-number-string }
       \null
-    }
-  }
-}
-
-\paper {
-    oddFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
-    }
-  }
-
-  evenFooterMarkup = \markup {
-    \fill-line {
-      ""
-      \italic "DRAFT"
-      ""
     }
   }
 }
