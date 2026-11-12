@@ -42,7 +42,7 @@
         g4 g a2 a4 bes c2 bes4 bes a2 \bar "|"
         a4 a g2 f2 \bar "||"
 
-        a4 a g4 a bes2 a4 (bes) a2 g f1 \bar "|."
+        a4 a a g4 a bes2 a4 (bes) a2 g f1 \bar "|."
 
       }
       \new Voice = "alto" \relative c'
@@ -62,7 +62,7 @@
         e4 e f2 f4 f4 f2 f4 f f2 \bar "|"
         f4 f4 e2 c2 \bar "||"
 
-        f4 f4 e4 f f2 f f e c1 \bar "|."
+        f4 f f4 e4 f f2 f f e c1 \bar "|."
       }
     >>
 
@@ -129,7 +129,7 @@
         c4 c c2 c4 d ees!2 d4 d c2 \bar "|"
         c4 c4 c2 a2 \bar "||"
 
-        c4 c4 bes c d2 c4 (d) c2 bes2 a1 \bar "|."
+        c4 c c4 bes c d2 c4 (d) c2 bes2 a1 \bar "|."
       }
 
       \new Voice = "bass" \relative c
@@ -151,7 +151,7 @@
         c4 c f2 f4 bes,4 a2 bes4 bes f'2 \bar "|"
         f4 f4 c2 f2 \bar "||"
 
-        f4 f4 g f bes,2 f'4 (bes,) c2 c f1 \bar "|."
+        f4 f f4 g f bes,2 f'4 (bes,) c2 c f1 \bar "|."
 
       }
     >>
