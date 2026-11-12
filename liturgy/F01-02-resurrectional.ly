@@ -253,4 +253,5 @@
 
 \paper {
   print-page-number = ##f
+  ragged-bottom = ##t
 }
