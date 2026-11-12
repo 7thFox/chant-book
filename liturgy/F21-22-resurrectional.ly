@@ -257,6 +257,7 @@
 % }
 
 \paper {
+  systems-per-page = 6
   print-page-number = ##f
   ragged-bottom = ##t
 }

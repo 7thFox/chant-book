@@ -85,3 +85,7 @@
     }
   >>
 }
+
+% \paper {
+%   systems-per-page = 6
+% }

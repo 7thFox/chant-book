@@ -224,3 +224,7 @@
 
   >>
 }
+
+\paper {
+  systems-per-page = 5
+}

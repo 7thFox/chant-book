@@ -66,12 +66,6 @@ ison = {
   property-defaults.fonts.serif = "Monomakh"
   property-defaults.fonts.sans = "Monomakh"
   property-defaults.fonts.typewriter = "Monomakh"
-
-  system-system-spacing =
-    #'((basic-distance . 8)
-       (minimum-distance . 4)
-       (padding . 1)`
-       (stretchability . 0))
 }
 
 \header {

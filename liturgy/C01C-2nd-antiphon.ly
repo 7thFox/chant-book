@@ -151,6 +151,8 @@
 }
 
 \paper {
+  systems-per-page = 6
+
   oddHeaderMarkup = \markup {
     \if \on-first-page \fill-line {
       \null
