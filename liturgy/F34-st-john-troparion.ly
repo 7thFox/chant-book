@@ -15,8 +15,8 @@
   }
   \right-column {
     \fontsize #8 \bold "F34"
-    % "Obikhod"
-    % "Tone 2"
+    "Obikhod"
+    "Tone 2"
   }
 }
 
