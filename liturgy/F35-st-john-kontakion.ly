@@ -14,12 +14,12 @@
   \null
   \center-column {
     \fontsize #4 \bold "Kontakion of St. John of San Francisco"
-    "July 2"
+    "Tone 4"
   }
   \right-column {
     \fontsize #8 \bold "F35"
     "Obikhod"
-    "Tone 4"
+    "July 2"
   }
 }
 

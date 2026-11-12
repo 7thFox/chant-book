@@ -11,12 +11,12 @@
   \null
   \center-column {
     \fontsize #4 \bold "Troparion of St. John of San Francisco"
-    "July 2"
+    "Tone 2"
   }
   \right-column {
     \fontsize #8 \bold "F34"
     "Obikhod"
-    "Tone 2"
+    "July 2"
   }
 }
 
