@@ -64,6 +64,10 @@
   }
 }
 
+% \paper {
+%   systems-per-page = 6
+% }
+
 \score {
   <<
     \new Staff  \with {
@@ -85,7 +89,3 @@
     }
   >>
 }
-
-% \paper {
-%   systems-per-page = 6
-% }
