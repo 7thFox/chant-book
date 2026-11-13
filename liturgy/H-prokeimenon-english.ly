@@ -274,7 +274,9 @@
 
       \mark \markup { \override #'(thickness . 3) \box { \pad-markup #.5  "6" } }
           \once \override LyricText.self-alignment-X = #LEFT
-        O_LORD,_SAVE_THY PEOPLE,
+        O_LORD,_SAVE_THY
+          \once \override LyricText.self-alignment-X = #RIGHT
+        PEOPLE,
         AND BLESS THINE
       \break
         IN -- HER -- I -- TANCE,
@@ -303,7 +305,9 @@
         \fontsize #-1 { "Tone 4: Song of the Fathers" }
       }
           \once \override LyricText.self-alignment-X = #LEFT
-        BLESSED_ART_THOU,_LORD_GOD_OF_OUR FATHERS,
+        BLESSED_ART_THOU,_LORD_GOD_OF_OUR
+          \once \override LyricText.self-alignment-X = #RIGHT
+        FATHERS,
         AND PRAISED AND GLO -- RI -- FIED
       \break
         IS THY NAME FOR -- EV -- ER.
@@ -434,7 +438,9 @@
         SAINTS_THAT_ARE_IN_HIS_EARTH_HATH_THE
       \break
           \once \override LyricText.self-alignment-X = #LEFT
-        LORD_BEEN WONDROUS;
+        LORD_BEEN
+          \once \override LyricText.self-alignment-X = #RIGHT
+        WONDROUS;
           \once \override LyricText.self-alignment-X = #LEFT
         HE_HATH_WROUGHT ALL HIS DE -- SIRES IN THEM.
     }
