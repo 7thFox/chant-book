@@ -1,5 +1,12 @@
 \version "2.24.0"
 
+% Some general guidelines:
+%   - Note elision should occur once 2 or more noteheads can be removed
+%   - Elision should have one leading quarter and one ending quarter of the same
+%       pitch to lead into the change
+%   - Words within elision should NOT be hyphenated on syllables unless it has
+%       multiple ways of being pronounced.
+
 #(set-global-staff-size 21)
 
 chant_red = #(rgb-color 0.60 0.00 0.00)

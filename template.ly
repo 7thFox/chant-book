@@ -1,12 +1,5 @@
 \include "common.ly"
 
-% Some general guidelines:
-%   - Note elision should occur once 2 or more noteheads can be removed
-%   - Elision should have one leading quarter and one ending quarter of the same
-%       pitch to lead into the change
-%   - Words within elision should NOT be hyphenated on syllables unless it has
-%       multiple ways of being pronounced.
-
 \paper {
 
   oddHeaderMarkup = \markup {
@@ -53,9 +46,6 @@
   }
 }
 
-% Typically we want to uncomment this towards the
-% end of drafting and place manual breaks in order
-% to optimize space on the page
 % \layout {
 %   \context {
 %     \Score
@@ -85,5 +75,53 @@
     He hath made His ways known un -- to Mo -- ses,
     un -- to the sons of Is -- ra -- el the things that He hath willed.
     }
+  >>
+}
+
+\score {
+  <<
+    \new Staff <<
+      \new Voice = "soprano" \relative c''
+      {
+        \key f \major
+        \voiceOne
+        \cadenzaOn
+        \omit Staff.TimeSignature
+
+      }
+      \new Voice = "alto" \relative c'
+      {
+        \voiceTwo
+        \cadenzaOn
+
+      }
+    >>
+
+    \new Lyrics \lyricsto "soprano" {
+    }
+
+
+    \new Staff <<
+
+      \new Voice = "tenor" \relative c'
+      {
+        \key f \major
+        \cadenzaOn
+        \voiceOne
+        % \clef "treble_8"
+        \clef bass
+        \omit Staff.TimeSignature
+
+      }
+
+      \new Voice = "bass" \relative c
+      {
+        \voiceTwo
+        \cadenzaOn
+        \omit Staff.TimeSignature
+
+      }
+    >>
+
   >>
 }
