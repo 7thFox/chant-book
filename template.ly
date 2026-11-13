@@ -35,7 +35,6 @@
   }
 }
 
-%% Remove once draft is complete
 \paper {
     oddFooterMarkup = \markup {
     \fill-line {
@@ -57,13 +56,12 @@
 % Typically we want to uncomment this towards the
 % end of drafting and place manual breaks in order
 % to optimize space on the page
-\layout {
-  \context {
-    \Score
-    % \override NonMusicalPaperColumn.line-break-permission = ##f
-  }
-}
-
+% \layout {
+%   \context {
+%     \Score
+%     % \override NonMusicalPaperColumn.line-break-permission = ##f
+%   }
+% }
 % \paper {
 %   systems-per-page = 6
 % }
